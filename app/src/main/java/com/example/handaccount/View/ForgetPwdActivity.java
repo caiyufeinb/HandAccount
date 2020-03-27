@@ -4,11 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.handaccount.Log.LogUtil;
 import com.example.handaccount.R;
+import com.qmuiteam.qmui.widget.QMUITopBar;
 import com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton;
 
 import butterknife.BindView;
@@ -34,6 +36,8 @@ public class ForgetPwdActivity extends AppCompatActivity {
     EditText forgetVerify;
     @BindView(R.id.button_change)
     QMUIRoundButton buttonChange;
+    @BindView(R.id.topbar_forget)
+    QMUITopBar mTopBar;
 
 
 
@@ -42,6 +46,7 @@ public class ForgetPwdActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.forget_pwd);
         ButterKnife.bind(this);
+        initTopBar();
     }
 
 
@@ -90,5 +95,16 @@ public class ForgetPwdActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    //初始化顶部栏
+    private void initTopBar(){
+        mTopBar.addLeftTextButton("返回", R.id.topbar_forget).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        mTopBar.setTitle("注册账号");
     }
 }

@@ -157,6 +157,13 @@
                     android:layout_weight="1" />
 
             </LinearLayout>
+            <CheckBox
+                android:id="@+id/rem_inf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="是否记住手机号和密码"
+                android:layout_gravity="center"
+                android:textColor="?attr/qmui_config_color_blue" />
 
 
 

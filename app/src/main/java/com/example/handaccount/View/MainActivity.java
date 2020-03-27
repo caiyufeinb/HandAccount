@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
     }
     //初始化顶部栏
     private void initTopBar(){
-        mTopBar.addLeftBackImageButton().setOnClickListener(new View.OnClickListener() {
+        mTopBar.addLeftTextButton("返回", R.id.topbar_register).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
